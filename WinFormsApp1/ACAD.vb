@@ -7,7 +7,7 @@ Imports System.Runtime.CompilerServices
 
 Module Program
 
-    Sub DXFFix(Optional oFiles As List(Of String) = Nothing)
+    Function DXFFix(Optional oFiles As List(Of String) = Nothing)
         Dim acadApp As AcadApplication
         Try
             acadApp = GetObject(, "AutoCAD.Application")   ' attach if already running
@@ -20,7 +20,8 @@ Module Program
                 Thread.Sleep(5000)
             Catch createEx As Exception
                 MessageBox.Show("Cannot start or find AutoCAD: " & createEx.Message)
-                Return
+                Exit Function
+
             End Try
         End Try
         'Dim acadApp As AcadApplication
@@ -28,7 +29,7 @@ Module Program
 
         If acadApp Is Nothing Then
             MessageBox.Show("AutoCAD COM object not available. Verify installation/ProgID/bitness.")
-            Return
+            Exit Function
         End If
 
         acadApp.Visible = True
@@ -56,7 +57,7 @@ Module Program
 
             Else
                 MessageBox.Show("No files were selected")
-                Return
+                Exit Function
             End If
 
         End If
@@ -154,7 +155,8 @@ NextFile:
         Next
 
         MsgBox("Done!")
-    End Sub
+        Return True
+    End Function
 
     Sub GetAcadApp()
         Dim acadApp As AcadApplication

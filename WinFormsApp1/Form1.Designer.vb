@@ -26,6 +26,8 @@ Partial Class Form1
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.btnFixVault = New System.Windows.Forms.Button()
+        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.btnTest1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Button1
@@ -67,11 +69,31 @@ Partial Class Form1
         Me.btnFixVault.Text = "Fix Vault"
         Me.btnFixVault.UseVisualStyleBackColor = True
         '
+        'ProgressBar1
+        '
+        Me.ProgressBar1.Location = New System.Drawing.Point(18, 201)
+        Me.ProgressBar1.Name = "ProgressBar1"
+        Me.ProgressBar1.Size = New System.Drawing.Size(246, 23)
+        Me.ProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee
+        Me.ProgressBar1.TabIndex = 4
+        Me.ProgressBar1.Visible = False
+        '
+        'btnTest1
+        '
+        Me.btnTest1.Location = New System.Drawing.Point(270, 144)
+        Me.btnTest1.Name = "btnTest1"
+        Me.btnTest1.Size = New System.Drawing.Size(53, 37)
+        Me.btnTest1.TabIndex = 5
+        Me.btnTest1.Text = "TEST"
+        Me.btnTest1.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(282, 196)
+        Me.ClientSize = New System.Drawing.Size(386, 251)
+        Me.Controls.Add(Me.btnTest1)
+        Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.btnFixVault)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
@@ -87,4 +109,6 @@ Partial Class Form1
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents btnFixVault As Button
+    Friend WithEvents ProgressBar1 As ProgressBar
+    Friend WithEvents btnTest1 As Button
 End Class
